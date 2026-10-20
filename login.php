@@ -1,10 +1,31 @@
-<?php include("header.php"); ?>
+<?php
+require_once "config.php";
+
+if (!isset($_SESSION["user_id"])) {
+    header("Location: dashboard.php");
+    exit;
+}
+
+include "header.php";
+?>
 
 <div class="auth-container">
 
     <h1 class="h3">Please sign in</h1>
 
-    <form action="loginlogic.php" method="POST">
+    <?php if (isset($_GET["registered"])): ?>
+        <div class="alert alert-success">
+            Registracija uspješna! Prijavite se.
+        </div>
+    <?php endif; ?>
+
+    <?php if (isset($_GET["error"])): ?>
+        <div class="alert alert-danger">
+            Pogrešno korisničko ime ili lozinka!
+        </div>
+    <?php endif; ?>
+
+    <form action="logic/login.php" method="POST">
 
         <label for="username" class="form-label">
             Username
@@ -53,4 +74,4 @@
 
 </div>
 
-<?php include("footer.php"); ?>
+<?php include "footer.php"; ?>
