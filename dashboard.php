@@ -29,7 +29,6 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <title>Dashboard</title>
 
-    <!-- Bootstrap CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -65,7 +64,6 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
 
@@ -99,7 +97,6 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             </div>
 
-            <!-- MAIN CONTENT -->
             <div class="col-md-10 main-content">
 
                 <h2>Dashboard</h2>

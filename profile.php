@@ -5,20 +5,17 @@ session_start();
 
 require_once "config.php";
 
-// Provjera sesije
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
 
-// ID korisnika
 $id = $_GET['id'] ?? $_SESSION['user_id'] ?? null;
 
 if (!$id) {
     die('User ID is missing!');
 }
 
-// Preuzimanje korisnika iz baze
 $sql = "SELECT * FROM new_users WHERE id = :id";
 
 $stmt = $conn->prepare($sql);
